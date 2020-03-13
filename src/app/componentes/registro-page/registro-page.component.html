@@ -1,0 +1,30 @@
+
+<div class="d-flex justify-content-center h-100">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro</h3>
+        </div>
+        <div class="card-body">
+            <form (submit)="onSubmintLogin()">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="email" id="email" name="email" class="form-control" [(ngModel)]="email" placeholder="ejemplo@email.com">
+                    
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-key"></i></span>
+                    </div>
+                    <input  type="password" id="password" name="password" class="form-control" [(ngModel)]="password" placeholder="password">
+                </div>
+              
+                <div class="form-group">
+                    <input type="submit" value="Entrar" class="btn float-right login_btn">
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    </div>
