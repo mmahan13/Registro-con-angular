@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../servicio/usuario.service';
+import { UsuarioService } from '../../servicios/usuario.service';
 import {  Router } from '@angular/router';
 @Component({
   selector: 'app-login-page',
@@ -18,6 +18,14 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmintLogin(){
-    this.router.navigate(['/privado'])
+    this.usuarioService.loginUsuario(this.email, this.password).then( (response) => 
+    {
+      console.log("logado con exito.");
+      this.router.navigate(['/privado']);
+    }).catch((error) =>{
+      console.log("Message "+ error);
+      this.router.navigate(['/login']);
+    });
+    
   }
 }

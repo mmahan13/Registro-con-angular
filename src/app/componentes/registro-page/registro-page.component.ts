@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../servicio/usuario.service';
+import { UsuarioService } from '../../servicios/usuario.service';
 import {  Router } from '@angular/router';
 
 @Component({
@@ -11,9 +11,18 @@ export class RegistroPageComponent implements OnInit {
   email:any;
   password:any;
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService, public router: Router) { }
 
   ngOnInit() {
   }
 
+  onSubmintLogin(){
+
+      this.usuarioService.registrarUsuario(this.email, this.password).then( (response) => 
+      {
+        console.log("Registrado con exito.");
+        this.router.navigate(['/privado']);
+      });
+    
+  }
 }
