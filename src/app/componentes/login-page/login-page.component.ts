@@ -20,7 +20,6 @@ export class LoginPageComponent implements OnInit {
   onSubmintLogin(){
     this.usuarioService.loginUsuario(this.email, this.password).then( (response) => 
     {
-      console.log("logado con exito.");
       this.router.navigate(['/privado']);
     }).catch((error) =>{
       console.log("Message "+ error);

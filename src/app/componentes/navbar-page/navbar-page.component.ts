@@ -25,7 +25,6 @@ email: string;
     })
   }
   exit(){
-    console.log("exit");
-    this.usuarioService.logout();
+   this.usuarioService.logout();
   }
 }

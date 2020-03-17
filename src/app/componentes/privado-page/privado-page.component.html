@@ -1,1 +1,31 @@
-<p>privado-page works!</p>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Clientes</h1>
+  </div>
+  
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+     <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-left" scope="col">Nombre</th>
+              <th class="text-left" scope="col">CIF/DNI</th>
+              <th class="text-left" scope="col">Email</th>
+              <th scope="col">Telefono</th>
+              <th class="text-left" scope="col">Dirección</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of clientes">
+              <td class="text-left">{{row.nombre}} {{row.apellidos}}</td>
+              <td class="text-left">{{row.dni}}</td>
+              <td class="text-left">{{row.email}}</td>
+              <td>{{row.telefono}}</td>
+              <td class="text-left">{{row.direccion}}</td>
+              <td style="cursor: pointer;" (click)="editarCli(row);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+           </tr>
+           
+         </tbody>
+        </table>
+    </div>
+

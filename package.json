@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^5.2.2",
     "firebase": "^7.11.0",
     "font-awesome": "^4.7.0",
     "font-awesome.css": "^4.7.2",

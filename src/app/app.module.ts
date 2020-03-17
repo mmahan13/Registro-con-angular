@@ -25,10 +25,11 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 
 const routes: Routes = [
-  {path: '', component:HomePageComponent },
+  {path: '', component:LoginPageComponent },
   {path: 'login', component:LoginPageComponent},
   {path: 'registro', component:RegistroPageComponent},
-  {path: 'privado', component:PrivadoPageComponent, canActivate: [AuthGuard]},
+  {path: 'productos', component:HomePageComponent},
+  {path: 'clientes', component:PrivadoPageComponent, canActivate: [AuthGuard]},
   {path: '**', component:NotfounPageComponent},
 ]
 

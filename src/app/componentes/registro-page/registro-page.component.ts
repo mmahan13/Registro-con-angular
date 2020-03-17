@@ -20,8 +20,7 @@ export class RegistroPageComponent implements OnInit {
 
       this.usuarioService.registrarUsuario(this.email, this.password).then( (response) => 
       {
-        console.log("Registrado con exito.");
-        this.router.navigate(['/privado']);
+        this.router.navigate(['/clientes']);
       });
     
   }

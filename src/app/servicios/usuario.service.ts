@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { map } from 'rxjs/operators';
-//import { auth } from 'firebase/app';
-//import { resolve } from 'url';
+import { Observable } from 'rxjs';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  constructor(public auth:AngularFireAuth) { }
+  constructor(public auth:AngularFireAuth, private httpClient: HttpClient) { }
 
   logout(){
     return this.auth.auth.signOut();
@@ -28,7 +30,6 @@ export class UsuarioService {
   }
 
   getInfoCuenta(){
-    //return this.auth.authState.map(auth =>auth);
     return this.auth.authState.pipe(map(auth => auth));
   }
 
@@ -42,6 +43,14 @@ export class UsuarioService {
       });
     });
     
+  }
+
+  getClientes(): Observable<any>{
+    return this.httpClient.get("http://127.0.0.1:8000/api/clientes");
+  }
+
+  getProductos(): Observable<any>{
+    return this.httpClient.get("http://127.0.0.1:8000/api/productos");
   }
 
 }
